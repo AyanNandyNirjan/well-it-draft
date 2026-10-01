@@ -3,33 +3,40 @@
 @tailwind utilities;
 
 :root {
-  --ink: #07111f;
-  --navy: #0a1e35;
-  --blue: #1677ff;
-  --sky: #63c5ff;
-  --mint: #6fe8d2;
-  --cloud: #f5f8fc;
+  --ink: #0b1528;
+  --navy: #13233d;
+  --blue: #2c4975;
+  --sky: #6894c7;
+  --gold: #eab308;
+  --mint: #eab308;
+  --cloud: #f8fafc;
 }
 
 * { box-sizing: border-box; }
-html { scroll-behavior: smooth; }
+html {
+  scroll-behavior: smooth;
+  overflow-x: hidden;
+}
 body {
   margin: 0;
   color: var(--ink);
   background: #ffffff;
   font-family: Inter, ui-sans-serif, system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
   -webkit-font-smoothing: antialiased;
+  overflow-x: hidden;
+  width: 100%;
+  position: relative;
 }
 a { color: inherit; text-decoration: none; }
 button, input, textarea, select { font: inherit; }
-::selection { background: #bfe1ff; color: #07111f; }
+::selection { background: #d0deee; color: #0b1528; }
 
-.container-shell { @apply mx-auto w-full max-w-[1240px] px-5 sm:px-6 lg:px-8; }
+.container-shell { @apply mx-auto w-full max-w-[1240px] px-4 sm:px-6 lg:px-8; }
 .section-pad { @apply py-20 sm:py-24 lg:py-28; }
-.eyebrow { @apply inline-flex items-center gap-2 rounded-full border border-blue/15 bg-blue/5 px-3.5 py-1.5 text-[11px] font-bold uppercase tracking-[0.18em] text-blue; }
-.gradient-text { background: linear-gradient(90deg,#1677ff 0%,#31a7ff 55%,#35cbb0 100%); -webkit-background-clip:text; background-clip:text; color: transparent; }
-.glass { background: rgba(255,255,255,.74); backdrop-filter: blur(16px); border: 1px solid rgba(255,255,255,.72); }
-.card-border { border: 1px solid rgba(8, 30, 53, .09); }
+.eyebrow { @apply inline-flex items-center gap-2 rounded-full border border-blue/20 bg-blue/5 px-3.5 py-1.5 text-[11px] font-bold uppercase tracking-[0.18em] text-blue; }
+.gradient-text { background: linear-gradient(100deg, #60A5FA 0%, #93C5FD 45%, #FACC15 100%); -webkit-background-clip:text; background-clip:text; color: transparent; }
+.glass { background: rgba(255,255,255,.82); backdrop-filter: blur(16px); border: 1px solid rgba(255,255,255,.80); }
+.card-border { border: 1px solid rgba(44, 73, 117, .12); }
 
 .hero-noise::before {
   content:"";

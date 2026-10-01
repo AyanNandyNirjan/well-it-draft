@@ -5,7 +5,7 @@ export default function Footer() {
   return (
     <footer className="bg-ink text-white">
       <div className="container-shell py-16 lg:py-20">
-        <div className="grid gap-12 lg:grid-cols-[1.2fr_.8fr_.8fr_1fr]">
+        <div className="grid gap-10 sm:grid-cols-2 lg:grid-cols-[1.2fr_.8fr_.8fr_1fr]">
           <div className="max-w-sm">
             <BrandLogo light />
             <p className="mt-6 text-sm leading-7 text-white/60">Dedicated offshore teams in Bangladesh for businesses that need reliable operations, specialist talent and scalable support.</p>

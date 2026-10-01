@@ -1,4 +1,5 @@
 import PageHero from "@/components/PageHero";
+import Image from "next/image";
 import SectionHeading from "@/components/SectionHeading";
 import Reveal from "@/components/Reveal";
 import CTA from "@/components/CTA";
@@ -40,6 +41,59 @@ export default function AboutPage() {
                 <p className="mt-4 text-xl font-extrabold leading-8 text-ink transition-colors duration-200 group-hover:text-blue">
                   Become a trusted global staffing partner recognized for quality, service and sustainable solutions.
                 </p>
+              </div>
+            </div>
+          </Reveal>
+        </div>
+      </section>
+
+      <section className="bg-white pb-20">
+        <div className="container-shell">
+          <Reveal>
+            <div className="group relative overflow-hidden rounded-[32px] border border-slate-200/80 bg-ink shadow-soft">
+              <div className="relative aspect-[21/9] min-h-[360px] w-full overflow-hidden">
+                <Image
+                  src="/images/dhaka-workplace.jpg"
+                  alt="Well IT Technology Office and Collaboration Space in Dhaka"
+                  fill
+                  sizes="(max-width: 1200px) 100vw, 1200px"
+                  className="object-cover transition-transform duration-700 ease-out group-hover:scale-105"
+                />
+                <div className="absolute inset-0 bg-gradient-to-t from-ink/95 via-ink/30 to-black/20" />
+                
+                <div className="absolute inset-x-0 bottom-0 p-6 sm:p-8 lg:p-10">
+                  <div className="max-w-2xl">
+                    <span className="inline-flex items-center gap-2 rounded-full border border-sky/30 bg-sky/15 px-3.5 py-1.5 text-xs font-bold uppercase tracking-[.18em] text-sky backdrop-blur-md">
+                      <span className="h-1.5 w-1.5 rounded-full bg-mint animate-pulse" />
+                      Dhaka Delivery Hub
+                    </span>
+                    <h3 className="mt-3 text-2xl font-black text-white sm:text-3xl lg:text-4xl tracking-tight">
+                      A modern environment built for high-performing teams.
+                    </h3>
+                    <p className="mt-2 text-sm text-white/75 sm:text-base leading-relaxed">
+                      Equipped with high-speed redundancy, enterprise security protocols, ergonomic workstations, and collaborative meeting suites.
+                    </p>
+                  </div>
+                </div>
+
+                <div className="absolute top-6 right-6 hidden sm:flex items-center gap-2 rounded-full border border-white/20 bg-ink/75 px-4 py-2 text-xs font-bold text-white backdrop-blur-md">
+                  <span className="h-2 w-2 rounded-full bg-emerald-400" />
+                  ISO 27001 Certified Facility
+                </div>
+              </div>
+
+              <div className="grid grid-cols-2 divide-x divide-slate-100 border-t border-slate-100 bg-white sm:grid-cols-4">
+                {[
+                  ["500+", "Vetted talent pool"],
+                  ["4 Continents", "Client operations served"],
+                  ["99.2%", "Staff retention rate"],
+                  ["< 7 Days", "Average role placement"]
+                ].map(([stat, label]) => (
+                  <div key={label} className="group/stat p-5 text-center transition-all duration-200 hover:bg-cloud/50">
+                    <p className="text-2xl font-black text-ink transition-transform duration-200 group-hover/stat:scale-105 group-hover/stat:text-blue sm:text-3xl">{stat}</p>
+                    <p className="mt-1 text-xs font-semibold text-slate-500">{label}</p>
+                  </div>
+                ))}
               </div>
             </div>
           </Reveal>

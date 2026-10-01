@@ -13,9 +13,39 @@ export const industries = [
 ];
 
 export const testimonials = [
-  { quote: "They quickly understood our business requirements and provided dedicated remote professionals who became an important part of operations.", name: "Jean Marie Wodon", role: "Co-Founder, Zapptax" },
-  { quote: "Their communication process and project coordination made remote team management smooth, organized, and highly efficient.", name: "Lee Dwyer", role: "Director, RP Prospects" },
-  { quote: "We hired data entry and administrative support professionals through them and achieved faster delivery while reducing operational costs.", name: "Roxane Reard", role: "Head of Operations, Zapptax" },
+  {
+    name: "Jean Marie Wodon",
+    role: "Co-Founder",
+    company: "Zapptax",
+    image: "/images/clients/jean-marie-wodon.png",
+    location: "Brussels, Belgium",
+    flag: "🇪🇺",
+    quote: "They quickly understood our business requirements and provided dedicated remote professionals who became an important part of our operations.",
+    highlight: "Operational Continuity",
+    impact: "Full-Time Dedicated Pod",
+  },
+  {
+    name: "Lee Dwyer",
+    role: "Director",
+    company: "RP Prospects",
+    image: "/images/clients/lee-dwyer.png",
+    location: "London, UK",
+    flag: "🇬🇧",
+    quote: "Their communication process and project coordination made remote team management smooth, organized, and highly efficient.",
+    highlight: "Project Velocity",
+    impact: "High SLA & Transparent Cadence",
+  },
+  {
+    name: "Roxane Reard",
+    role: "Head of Operations",
+    company: "Zapptax",
+    image: "/images/clients/roxane-reard.png",
+    location: "Paris, France",
+    flag: "🇪🇺",
+    quote: "We hired data entry and administrative support professionals through them and achieved faster delivery while reducing operational costs.",
+    highlight: "Cost & Speed Optimization",
+    impact: "Back-Office & Data Accuracy",
+  },
 ];
 
 export const process = [

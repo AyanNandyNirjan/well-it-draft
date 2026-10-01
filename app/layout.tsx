@@ -7,6 +7,11 @@ import { Toaster } from "react-hot-toast";
 export const metadata: Metadata = {
   title: { default: "Well IT & Consultancy Ltd | Offshore Staffing", template: "%s | Well IT" },
   description: "Dedicated offshore teams and remote staffing solutions from Bangladesh for businesses in the US, UK, Europe, Canada and Australia.",
+  icons: {
+    icon: "/images/logo-mark.png",
+    shortcut: "/images/logo-mark.png",
+    apple: "/images/logo-mark.png",
+  },
 };
 
 export default function RootLayout({ children }: Readonly<{ children: React.ReactNode }>) {

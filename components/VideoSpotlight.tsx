@@ -134,26 +134,6 @@ export default function VideoSpotlight({
           )}
         </div>
       </div>
-
-      {/* Floating Meta Badges for desktop */}
-      <div className="floating absolute -bottom-5 -left-4 hidden rounded-2xl border border-white/20 bg-white p-3.5 text-ink shadow-soft sm:block">
-        <div className="flex items-center gap-2.5">
-          <span className="grid h-9 w-9 place-items-center rounded-xl bg-blue/10 text-blue">
-            <HugeiconsIcon icon={Video01Icon} size={18} color="currentColor" />
-          </span>
-          <div>
-            <p className="text-xs font-extrabold">Executive Insight</p>
-            <p className="text-[10px] text-slate-500">Culture & operations</p>
-          </div>
-        </div>
-      </div>
-
-      <div className="floating-delayed absolute -top-5 -right-4 hidden rounded-2xl border border-white/10 bg-ink px-4 py-2.5 text-white shadow-soft sm:block">
-        <div className="flex items-center gap-2">
-          <span className="h-2 w-2 rounded-full bg-emerald-400" />
-          <span className="text-xs font-bold text-white">Full HD Available</span>
-        </div>
-      </div>
     </div>
   );
 }

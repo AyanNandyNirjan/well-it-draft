@@ -1,10 +1,13 @@
 import Link from "next/link";
+import Image from "next/image";
 import { HugeiconsIcon } from "@hugeicons/react";
 import { UserIcon, Settings01Icon, Home01Icon, SearchIcon, Notification03Icon } from "@hugeicons/core-free-icons";
 import Reveal from "@/components/Reveal";
 import SectionHeading from "@/components/SectionHeading";
 import CTA from "@/components/CTA";
 import VideoSpotlight from "@/components/VideoSpotlight";
+import HeroConsole from "@/components/HeroConsole";
+import { ServiceMiniVisual } from "@/components/ServiceVisuals";
 import { insights, industries, process, services, testimonials } from "@/lib/site-data";
 
 const IconBadge = ({ icon }: { icon: any }) => (
@@ -17,106 +20,44 @@ const icons = [UserIcon, Settings01Icon, Home01Icon, SearchIcon, Notification03I
 export default function Home() {
   return (
     <main>
-      <section className="hero-noise relative overflow-hidden bg-ink pt-[76px] text-white">
+      <section className="hero-noise relative flex min-h-screen min-h-[100dvh] flex-col justify-center overflow-hidden bg-ink pt-20 pb-8 sm:pt-24 sm:pb-10 lg:pt-20 lg:pb-8 text-white">
         <div className="absolute -left-24 top-32 h-72 w-72 rounded-full bg-blue/25 blur-3xl animate-pulse-slow pointer-events-none"/>
         <div className="absolute right-0 top-10 h-[430px] w-[430px] rounded-full bg-sky/10 blur-3xl pointer-events-none"/>
-        <div className="container-shell relative grid min-h-[760px] items-center gap-12 py-16 lg:grid-cols-[1.02fr_.98fr] lg:py-20">
+        <div className="container-shell relative my-auto grid items-center gap-8 lg:grid-cols-[1.05fr_.95fr] lg:gap-10 xl:gap-14 py-4 sm:py-6">
           <Reveal>
-            <div className="inline-flex items-center gap-2 rounded-full border border-white/10 bg-white/5 px-3.5 py-2 text-[11px] font-bold uppercase tracking-[.16em] text-sky transition-all duration-300 hover:border-white/20 hover:bg-white/10 hover:scale-105 cursor-default">
+            <div className="inline-flex items-center gap-2 rounded-full border border-white/10 bg-white/5 px-3 sm:px-3.5 py-1.5 sm:py-2 text-[10px] sm:text-[11px] font-bold uppercase tracking-[.16em] text-sky transition-all duration-300 hover:border-white/20 hover:bg-white/10 hover:scale-105 cursor-default">
               <span className="h-1.5 w-1.5 rounded-full bg-mint animate-pulse"/>
               Dedicated offshore teams in Bangladesh
             </div>
-            <h1 className="mt-7 max-w-3xl text-5xl font-black tracking-[-0.06em] sm:text-6xl lg:text-[74px] lg:leading-[.98]">
+            <h1 className="mt-5 sm:mt-7 max-w-3xl text-3xl font-black tracking-[-0.055em] xs:text-4xl sm:text-5xl lg:text-[50px] xl:text-[62px] 2xl:text-[70px] leading-[1.05]">
               Build a capable team <span className="gradient-text">without slowing down.</span>
             </h1>
-            <p className="mt-7 max-w-xl text-base leading-8 text-white/64 sm:text-lg">
+            <p className="mt-4 sm:mt-6 max-w-xl text-sm sm:text-base leading-7 sm:leading-8 text-white/65">
               Well IT helps businesses build dedicated remote teams across operations, customer service, finance, IT, marketing and specialized support — with sourcing, onboarding and ongoing coordination handled for you.
             </p>
-            <div className="mt-8 flex flex-wrap gap-3">
+            <div className="mt-6 sm:mt-8 flex flex-col xs:flex-row flex-wrap gap-3">
               <Link
                 href="/contact"
-                className="group inline-flex items-center gap-2 rounded-full bg-white px-7 py-3.5 text-sm font-bold text-ink transition-all duration-300 hover:-translate-y-1 hover:bg-sky hover:shadow-glow active:scale-95"
+                className="group inline-flex items-center justify-center gap-2 rounded-full bg-white px-6 sm:px-7 py-3 sm:py-3.5 text-xs sm:text-sm font-bold text-ink transition-all duration-300 hover:-translate-y-1 hover:bg-sky hover:shadow-glow active:scale-95 text-center"
               >
                 <span>Hire dedicated talent</span>
                 <span className="transition-transform duration-300 group-hover:translate-x-1">→</span>
               </Link>
               <Link
                 href="/services"
-                className="inline-flex items-center rounded-full border border-white/15 bg-white/5 px-6 py-3.5 text-sm font-bold text-white transition-all duration-300 hover:-translate-y-1 hover:bg-white/15 active:scale-95"
+                className="inline-flex items-center justify-center rounded-full border border-white/15 bg-white/5 px-5 sm:px-6 py-3 sm:py-3.5 text-xs sm:text-sm font-bold text-white transition-all duration-300 hover:-translate-y-1 hover:bg-white/15 active:scale-95 text-center"
               >
                 Explore solutions
               </Link>
             </div>
-            <div className="mt-10 flex flex-wrap gap-x-8 gap-y-3 border-t border-white/10 pt-6 text-xs font-semibold text-white/45">
+            <div className="mt-7 sm:mt-9 flex flex-wrap gap-x-6 sm:gap-x-8 gap-y-2.5 border-t border-white/10 pt-5 sm:pt-6 text-[11px] sm:text-xs font-semibold text-white/45">
               <span className="transition-colors duration-200 hover:text-white/80 cursor-default">US · UK · EU · AU clients</span>
               <span className="transition-colors duration-200 hover:text-white/80 cursor-default">Flexible staffing models</span>
               <span className="transition-colors duration-200 hover:text-white/80 cursor-default">Structured onboarding</span>
             </div>
           </Reveal>
-          <Reveal delay={.12} className="relative mx-auto w-full max-w-[580px]">
-            <div className="absolute -inset-10 rounded-full bg-blue/15 blur-3xl animate-pulse-slow pointer-events-none"/>
-            <div className="relative rounded-[32px] border border-white/10 bg-white/[.055] p-4 shadow-2xl backdrop-blur-md transition-all duration-500 hover:border-white/20 sm:p-6">
-              <div className="rounded-[24px] bg-white p-5 text-ink shadow-sm sm:p-6">
-                <div className="flex items-center justify-between">
-                  <div>
-                    <p className="text-xs font-bold uppercase tracking-[.14em] text-slate-400">Team operations</p>
-                    <p className="mt-2 text-lg font-extrabold text-ink">Your offshore team, at a glance</p>
-                  </div>
-                  <IconBadge icon={Notification03Icon}/>
-                </div>
-                <div className="mt-6 grid grid-cols-3 gap-3">
-                  <div className="group/stat rounded-2xl bg-cloud p-4 transition-all duration-200 hover:-translate-y-1 hover:bg-white hover:shadow-md cursor-default">
-                    <p className="text-[11px] font-semibold text-slate-400">Team</p>
-                    <p className="mt-1 text-2xl font-black text-ink transition-transform duration-200 group-hover/stat:scale-105">12</p>
-                    <p className="mt-1 text-[10px] font-bold text-emerald-600">+3 this month</p>
-                  </div>
-                  <div className="group/stat rounded-2xl bg-cloud p-4 transition-all duration-200 hover:-translate-y-1 hover:bg-white hover:shadow-md cursor-default">
-                    <p className="text-[11px] font-semibold text-slate-400">Coverage</p>
-                    <p className="mt-1 text-2xl font-black text-ink transition-transform duration-200 group-hover/stat:scale-105">5d</p>
-                    <p className="mt-1 text-[10px] font-bold text-blue">Aligned hours</p>
-                  </div>
-                  <div className="group/stat rounded-2xl bg-cloud p-4 transition-all duration-200 hover:-translate-y-1 hover:bg-white hover:shadow-md cursor-default">
-                    <p className="text-[11px] font-semibold text-slate-400">Check-ins</p>
-                    <p className="mt-1 text-2xl font-black text-ink transition-transform duration-200 group-hover/stat:scale-105">100%</p>
-                    <p className="mt-1 text-[10px] font-bold text-emerald-600">On schedule</p>
-                  </div>
-                </div>
-                <div className="mt-4 rounded-2xl border border-slate-100 p-4 transition-all duration-200 hover:border-blue/20">
-                  <div className="flex items-center justify-between">
-                    <p className="text-sm font-bold">Role coverage</p>
-                    <span className="text-[11px] font-bold text-blue">Live view</span>
-                  </div>
-                  <div className="mt-4 grid gap-3">
-                    {[["Customer Support","92%"],["Back Office","78%"],["Finance Ops","64%"]].map(([a,b]) => (
-                      <div key={a} className="group/bar">
-                        <div className="flex justify-between text-[11px] font-semibold text-slate-500">
-                          <span className="transition-colors group-hover/bar:text-blue">{a}</span>
-                          <span>{b}</span>
-                        </div>
-                        <div className="mt-1.5 h-2 rounded-full bg-slate-100 overflow-hidden">
-                          <div className="h-2 rounded-full bg-gradient-to-r from-blue to-sky transition-all duration-500 group-hover/bar:brightness-110" style={{width: b}}/>
-                        </div>
-                      </div>
-                    ))}
-                  </div>
-                </div>
-              </div>
-              <div className="floating absolute -left-7 top-16 hidden rounded-2xl border border-white/20 bg-white p-4 text-ink shadow-soft transition-all duration-300 hover:scale-105 hover:shadow-2xl cursor-pointer sm:block">
-                <div className="flex items-center gap-3">
-                  <span className="grid h-10 w-10 place-items-center rounded-full bg-mint/25 text-ink">
-                    <HugeiconsIcon icon={UserIcon} size={20}/>
-                  </span>
-                  <div>
-                    <p className="text-xs font-bold">Talent matched</p>
-                    <p className="text-[10px] text-slate-400">Ready for interview</p>
-                  </div>
-                </div>
-              </div>
-              <div className="floating-delayed absolute -bottom-6 right-2 hidden rounded-2xl border border-white/20 bg-ink px-4 py-3 shadow-2xl transition-all duration-300 hover:scale-105 cursor-pointer sm:block">
-                <p className="text-[10px] font-bold uppercase tracking-[.15em] text-sky">Onboarding</p>
-                <p className="mt-1 text-sm font-bold text-white">Workflow aligned ✓</p>
-              </div>
-            </div>
+          <Reveal delay={.12} className="relative mx-auto w-full max-w-[620px]">
+            <HeroConsole />
           </Reveal>
         </div>
       </section>
@@ -145,10 +86,13 @@ export default function Home() {
             {process.map((p, i) => (
               <Reveal key={p.step} delay={i * 0.07}>
                 <div className="group h-full rounded-[24px] border border-slate-100 bg-cloud/60 p-6 transition-all duration-300 hover:-translate-y-2 hover:bg-white hover:border-blue/20 hover:shadow-soft cursor-default">
-                  <span className="inline-block text-xs font-black tracking-[.15em] text-blue transition-transform duration-300 group-hover:scale-110 group-hover:translate-x-1">
-                    {p.step}
-                  </span>
-                  <h3 className="mt-8 text-xl font-extrabold tracking-[-.03em] transition-colors duration-200 group-hover:text-blue">
+                  <div className="flex items-center justify-between">
+                    <span className="inline-block text-xs font-black tracking-[.15em] text-blue transition-transform duration-300 group-hover:scale-110 group-hover:translate-x-1">
+                      {p.step}
+                    </span>
+                    <span className="h-2 w-2 rounded-full bg-blue/30 transition-all duration-300 group-hover:bg-blue group-hover:scale-125" />
+                  </div>
+                  <h3 className="mt-7 text-xl font-extrabold tracking-[-.03em] transition-colors duration-200 group-hover:text-blue">
                     {p.title}
                   </h3>
                   <p className="mt-3 text-sm leading-6 text-slate-600">
@@ -157,6 +101,16 @@ export default function Home() {
                 </div>
               </Reveal>
             ))}
+          </div>
+
+          <div className="mt-8 hidden lg:flex items-center justify-between rounded-2xl bg-cloud/70 p-4 border border-slate-100 text-xs font-semibold text-slate-500">
+            <span className="flex items-center gap-2"><span className="h-2 w-2 rounded-full bg-blue" /> Day 1: Role Blueprint</span>
+            <span className="text-slate-300">──────►</span>
+            <span className="flex items-center gap-2"><span className="h-2 w-2 rounded-full bg-sky" /> Day 3-5: Top Candidates</span>
+            <span className="text-slate-300">──────►</span>
+            <span className="flex items-center gap-2"><span className="h-2 w-2 rounded-full bg-mint" /> Day 7: Direct Interview</span>
+            <span className="text-slate-300">──────►</span>
+            <span className="flex items-center gap-2"><span className="h-2 w-2 rounded-full bg-emerald-500" /> Week 2: Kickoff & SLA Tracking</span>
           </div>
         </div>
       </section>
@@ -191,6 +145,7 @@ export default function Home() {
                   <p className="mt-3 text-sm leading-6 text-slate-600">
                     {s.text}
                   </p>
+                  <ServiceMiniVisual type={i} />
                   <div className="mt-6 h-px bg-slate-100 transition-colors group-hover:bg-blue/15" />
                   <p className="mt-4 inline-flex items-center gap-1.5 text-xs font-bold text-blue opacity-70 transition-all duration-200 group-hover:opacity-100">
                     <span>Explore capability</span>
@@ -226,6 +181,27 @@ export default function Home() {
                     {x}
                   </div>
                 ))}
+              </div>
+              <div className="relative mt-6 overflow-hidden rounded-2xl border border-white/15 shadow-xl">
+                <div className="relative aspect-[16/9] w-full overflow-hidden">
+                  <Image
+                    src="/images/global-operations.jpg"
+                    alt="Well IT Global Remote Operations Center"
+                    fill
+                    sizes="(max-width: 768px) 100vw, 550px"
+                    className="object-cover transition-transform duration-700 ease-out group-hover:scale-105"
+                  />
+                  <div className="absolute inset-0 bg-gradient-to-t from-ink/90 via-transparent to-black/20" />
+                  <div className="absolute bottom-3 left-3 right-3 flex items-center justify-between text-[11px] font-bold text-white">
+                    <span className="flex items-center gap-1.5">
+                      <span className="h-2 w-2 rounded-full bg-mint animate-pulse" />
+                      Dhaka Operations Hub ↔ US · UK · EU · AU
+                    </span>
+                    <span className="rounded-full bg-white/15 px-2.5 py-0.5 backdrop-blur-md text-[10px] uppercase tracking-wider text-sky">
+                      Live Network
+                    </span>
+                  </div>
+                </div>
               </div>
             </div>
           </Reveal>
@@ -309,21 +285,70 @@ export default function Home() {
             title="Trusted for reliability, communication and integration."
             text="A strong offshore engagement should feel increasingly less like outsourcing and more like a dependable extension of the team."
           />
-          <div className="mt-12 grid gap-5 lg:grid-cols-3">
+          <div className="mt-12 grid gap-6 lg:grid-cols-3">
             {testimonials.map((t, i) => (
-              <Reveal key={t.name} delay={i * 0.07}>
-                <figure className="group h-full rounded-[26px] border border-slate-100 bg-white p-7 shadow-[0_10px_40px_rgba(8,30,53,.05)] transition-all duration-300 hover:-translate-y-2 hover:border-blue/20 hover:shadow-soft">
-                  <div className="text-4xl font-black leading-none text-blue/25 transition-colors duration-300 group-hover:text-blue/50">
-                    “
+              <Reveal key={t.name} delay={i * 0.08}>
+                <div className="group relative flex h-full flex-col justify-between overflow-hidden rounded-[28px] border border-slate-100 bg-white p-7 sm:p-8 shadow-[0_10px_40px_rgba(8,30,53,.05)] transition-all duration-300 hover:-translate-y-2 hover:border-blue/30 hover:shadow-soft cursor-default">
+                  {/* Subtle top ambient indicator */}
+                  <div className="absolute inset-x-8 top-0 h-1 bg-gradient-to-r from-blue to-sky opacity-0 transition-opacity duration-300 group-hover:opacity-100 rounded-t-full" />
+
+                  <div>
+                    {/* Header: Client Avatar + Info + Rating */}
+                    <div className="flex items-start justify-between gap-3">
+                      <div className="flex items-center gap-3.5">
+                        <div className="relative h-16 w-16 shrink-0 overflow-hidden rounded-2xl border border-slate-100 shadow-sm ring-2 ring-slate-100 group-hover:ring-blue/30 transition-all duration-300">
+                          <Image
+                            src={t.image}
+                            alt={t.name}
+                            fill
+                            sizes="64px"
+                            className="object-cover object-top transition-transform duration-500 group-hover:scale-105"
+                          />
+                          <span className="absolute bottom-1 right-1 grid h-4 w-4 place-items-center rounded-full bg-blue text-[9px] font-black text-white shadow-xs">
+                            ✓
+                          </span>
+                        </div>
+                        <div>
+                          <h4 className="text-base font-extrabold text-ink transition-colors duration-200 group-hover:text-blue">
+                            {t.name}
+                          </h4>
+                          <p className="mt-0.5 text-xs font-semibold text-slate-500">
+                            {t.role} · <span className="font-bold text-ink">{t.company}</span>
+                          </p>
+                          <p className="mt-1 flex items-center gap-1 text-[11px] font-medium text-slate-400">
+                            <span>{t.flag}</span>
+                            <span>{t.location}</span>
+                          </p>
+                        </div>
+                      </div>
+
+                      <div className="rounded-full bg-amber-50/80 px-2.5 py-1 border border-amber-200/50 text-[10px] font-black text-amber-600 flex items-center gap-1 shrink-0">
+                        <span>★</span>
+                        <span>5.0</span>
+                      </div>
+                    </div>
+
+                    {/* Quote text */}
+                    <blockquote className="mt-6 text-[14px] leading-7 text-slate-600 italic">
+                      “{t.quote}”
+                    </blockquote>
                   </div>
-                  <blockquote className="mt-3 text-[15px] leading-7 text-slate-700">
-                    {t.quote}
-                  </blockquote>
-                  <figcaption className="mt-7 border-t border-slate-100 pt-5">
-                    <p className="text-sm font-extrabold text-ink transition-colors duration-200 group-hover:text-blue">{t.name}</p>
-                    <p className="mt-1 text-xs text-slate-400">{t.role}</p>
-                  </figcaption>
-                </figure>
+
+                  {/* Impact & Outcome Pill Footer */}
+                  <div className="mt-8 border-t border-slate-100 pt-4 flex items-center justify-between">
+                    <div>
+                      <p className="text-[10px] font-black uppercase tracking-[.15em] text-slate-400">
+                        Operational Impact
+                      </p>
+                      <p className="text-xs font-bold text-blue mt-0.5">
+                        {t.highlight}
+                      </p>
+                    </div>
+                    <span className="rounded-lg bg-cloud px-2.5 py-1 text-[10px] font-bold text-slate-600 border border-slate-100">
+                      {t.impact}
+                    </span>
+                  </div>
+                </div>
               </Reveal>
             ))}
           </div>

@@ -9,16 +9,19 @@ const config: Config = {
   theme: {
     extend: {
       colors: {
-        ink: "#07111F",
-        navy: "#0A1E35",
-        blue: "#1677FF",
-        sky: "#63C5FF",
-        mint: "#6FE8D2",
-        cloud: "#F5F8FC"
+        ink: "#0B1528",
+        navy: "#13233D",
+        blue: "#2C4975",
+        brand: "#2C4975",
+        sky: "#6894C7",
+        gold: "#EAB308",
+        mint: "#EAB308",
+        cloud: "#F8FAFC"
       },
       boxShadow: {
-        soft: "0 24px 70px rgba(7, 17, 31, 0.10)",
-        glow: "0 20px 60px rgba(22, 119, 255, 0.22)"
+        soft: "0 24px 70px rgba(11, 21, 40, 0.08)",
+        glow: "0 20px 50px rgba(44, 73, 117, 0.28)",
+        gold: "0 14px 40px rgba(234, 179, 8, 0.25)"
       },
       backgroundImage: {
         grid: "linear-gradient(rgba(255,255,255,.06) 1px, transparent 1px), linear-gradient(90deg, rgba(255,255,255,.06) 1px, transparent 1px)"
