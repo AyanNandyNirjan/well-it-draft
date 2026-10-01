@@ -7,6 +7,7 @@ import SectionHeading from "@/components/SectionHeading";
 import CTA from "@/components/CTA";
 import VideoSpotlight from "@/components/VideoSpotlight";
 import HeroConsole from "@/components/HeroConsole";
+import CertificationsSection from "@/components/CertificationsSection";
 import { ServiceMiniVisual } from "@/components/ServiceVisuals";
 import { insights, industries, process, services, testimonials } from "@/lib/site-data";
 
@@ -17,16 +18,145 @@ const IconBadge = ({ icon }: { icon: any }) => (
 );
 const icons = [UserIcon, Settings01Icon, Home01Icon, SearchIcon, Notification03Icon, UserIcon];
 
+const industryStyles: Record<string, {
+  bg: string;
+  border: string;
+  text: string;
+  dot: string;
+  hoverBg: string;
+  hoverText: string;
+  hoverBorder: string;
+}> = {
+  "Administrative Services": {
+    bg: "bg-[#2C4975]/[0.08]",
+    border: "border-[#2C4975]/25",
+    text: "text-[#1C365C]",
+    dot: "bg-[#2C4975]",
+    hoverBg: "hover:bg-[#2C4975]",
+    hoverText: "hover:text-white",
+    hoverBorder: "hover:border-[#2C4975]",
+  },
+  "Education": {
+    bg: "bg-indigo-600/[0.08]",
+    border: "border-indigo-500/25",
+    text: "text-indigo-950",
+    dot: "bg-indigo-600",
+    hoverBg: "hover:bg-indigo-700",
+    hoverText: "hover:text-white",
+    hoverBorder: "hover:border-indigo-700",
+  },
+  "Finance & Accounting": {
+    bg: "bg-amber-500/[0.12]",
+    border: "border-amber-500/35",
+    text: "text-amber-950",
+    dot: "bg-amber-600",
+    hoverBg: "hover:bg-amber-500",
+    hoverText: "hover:text-[#0B1528]",
+    hoverBorder: "hover:border-amber-500",
+  },
+  "Healthcare": {
+    bg: "bg-emerald-600/[0.08]",
+    border: "border-emerald-600/25",
+    text: "text-emerald-950",
+    dot: "bg-emerald-600",
+    hoverBg: "hover:bg-emerald-700",
+    hoverText: "hover:text-white",
+    hoverBorder: "hover:border-emerald-700",
+  },
+  "Information Technology": {
+    bg: "bg-blue-600/[0.08]",
+    border: "border-blue-600/25",
+    text: "text-blue-950",
+    dot: "bg-blue-600",
+    hoverBg: "hover:bg-blue-700",
+    hoverText: "hover:text-white",
+    hoverBorder: "hover:border-blue-700",
+  },
+  "Marketing & Advertising": {
+    bg: "bg-orange-500/[0.09]",
+    border: "border-orange-500/30",
+    text: "text-orange-950",
+    dot: "bg-orange-600",
+    hoverBg: "hover:bg-orange-600",
+    hoverText: "hover:text-white",
+    hoverBorder: "hover:border-orange-600",
+  },
+  "Real Estate": {
+    bg: "bg-slate-700/[0.08]",
+    border: "border-slate-500/25",
+    text: "text-slate-900",
+    dot: "bg-slate-700",
+    hoverBg: "hover:bg-slate-800",
+    hoverText: "hover:text-white",
+    hoverBorder: "hover:border-slate-800",
+  },
+  "Sales & Business Development": {
+    bg: "bg-rose-600/[0.08]",
+    border: "border-rose-600/25",
+    text: "text-rose-950",
+    dot: "bg-rose-600",
+    hoverBg: "hover:bg-rose-700",
+    hoverText: "hover:text-white",
+    hoverBorder: "hover:border-rose-700",
+  },
+  "Telecommunications": {
+    bg: "bg-teal-600/[0.08]",
+    border: "border-teal-600/25",
+    text: "text-teal-950",
+    dot: "bg-teal-600",
+    hoverBg: "hover:bg-teal-700",
+    hoverText: "hover:text-white",
+    hoverBorder: "hover:border-teal-700",
+  },
+  "Travel & Hospitality": {
+    bg: "bg-cyan-600/[0.08]",
+    border: "border-cyan-600/25",
+    text: "text-cyan-950",
+    dot: "bg-cyan-600",
+    hoverBg: "hover:bg-cyan-700",
+    hoverText: "hover:text-white",
+    hoverBorder: "hover:border-cyan-700",
+  },
+  "Media & Entertainment": {
+    bg: "bg-purple-600/[0.08]",
+    border: "border-purple-600/25",
+    text: "text-purple-950",
+    dot: "bg-purple-600",
+    hoverBg: "hover:bg-purple-700",
+    hoverText: "hover:text-white",
+    hoverBorder: "hover:border-purple-700",
+  },
+  "Human Resources": {
+    bg: "bg-violet-600/[0.08]",
+    border: "border-violet-600/25",
+    text: "text-violet-950",
+    dot: "bg-violet-600",
+    hoverBg: "hover:bg-violet-700",
+    hoverText: "hover:text-white",
+    hoverBorder: "hover:border-violet-700",
+  },
+};
+
+const defaultIndustryStyle = {
+  bg: "bg-slate-100",
+  border: "border-slate-200",
+  text: "text-slate-800",
+  dot: "bg-[#2C4975]",
+  hoverBg: "hover:bg-[#2C4975]",
+  hoverText: "hover:text-white",
+  hoverBorder: "hover:border-[#2C4975]",
+};
+
 export default function Home() {
   return (
     <main>
       <section className="hero-noise relative flex min-h-screen min-h-[100dvh] flex-col justify-center overflow-hidden bg-ink pt-20 pb-8 sm:pt-24 sm:pb-10 lg:pt-20 lg:pb-8 text-white">
-        <div className="absolute -left-24 top-32 h-72 w-72 rounded-full bg-blue/25 blur-3xl animate-pulse-slow pointer-events-none"/>
-        <div className="absolute right-0 top-10 h-[430px] w-[430px] rounded-full bg-sky/10 blur-3xl pointer-events-none"/>
+        <div className="absolute -left-24 top-32 h-72 w-72 rounded-full bg-blue/30 blur-3xl animate-pulse-slow pointer-events-none"/>
+        <div className="absolute right-0 top-10 h-[430px] w-[430px] rounded-full bg-gold/15 blur-3xl pointer-events-none"/>
         <div className="container-shell relative my-auto grid items-center gap-8 lg:grid-cols-[1.05fr_.95fr] lg:gap-10 xl:gap-14 py-4 sm:py-6">
           <Reveal>
-            <div className="inline-flex items-center gap-2 rounded-full border border-white/10 bg-white/5 px-3 sm:px-3.5 py-1.5 sm:py-2 text-[10px] sm:text-[11px] font-bold uppercase tracking-[.16em] text-sky transition-all duration-300 hover:border-white/20 hover:bg-white/10 hover:scale-105 cursor-default">
-              <span className="h-1.5 w-1.5 rounded-full bg-mint animate-pulse"/>
+            <div className="inline-flex items-center gap-2 rounded-full border border-gold/30 bg-gold/10 px-3 sm:px-3.5 py-1.5 sm:py-2 text-[10px] sm:text-[11px] font-bold uppercase tracking-[.16em] text-gold transition-all duration-300 hover:border-gold/50 hover:bg-gold/15 hover:scale-105 cursor-default">
+              <span className="h-1.5 w-1.5 rounded-full bg-gold animate-pulse"/>
               Dedicated offshore teams in Bangladesh
             </div>
             <h1 className="mt-5 sm:mt-7 max-w-3xl text-3xl font-black tracking-[-0.055em] xs:text-4xl sm:text-5xl lg:text-[50px] xl:text-[62px] 2xl:text-[70px] leading-[1.05]">
@@ -38,7 +168,7 @@ export default function Home() {
             <div className="mt-6 sm:mt-8 flex flex-col xs:flex-row flex-wrap gap-3">
               <Link
                 href="/contact"
-                className="group inline-flex items-center justify-center gap-2 rounded-full bg-white px-6 sm:px-7 py-3 sm:py-3.5 text-xs sm:text-sm font-bold text-ink transition-all duration-300 hover:-translate-y-1 hover:bg-sky hover:shadow-glow active:scale-95 text-center"
+                className="group inline-flex items-center justify-center gap-2 rounded-full bg-white px-6 sm:px-7 py-3 sm:py-3.5 text-xs sm:text-sm font-bold text-ink transition-all duration-300 hover:-translate-y-1 hover:bg-gold hover:text-ink hover:shadow-gold active:scale-95 text-center"
               >
                 <span>Hire dedicated talent</span>
                 <span className="transition-transform duration-300 group-hover:translate-x-1">→</span>
@@ -62,16 +192,36 @@ export default function Home() {
         </div>
       </section>
 
-      <section className="overflow-hidden border-b border-slate-100 bg-white py-5">
-        <div className="marquee-track flex w-max gap-3 pr-3">
-          {[...industries.slice(0,8),...industries.slice(0,8)].map((x,i)=>(
-            <span
-              key={i}
-              className="rounded-full border border-slate-200 bg-white px-4 py-2 text-xs font-bold text-slate-500 transition-all duration-200 hover:border-blue/40 hover:bg-blue/5 hover:text-blue hover:scale-105 cursor-default"
-            >
-              {x}
-            </span>
-          ))}
+      <section className="marquee-container relative overflow-hidden border-b border-slate-100 bg-white py-4 sm:py-5 [mask-image:linear-gradient(to_right,transparent_0%,black_5%,black_95%,transparent_100%)]">
+        <div className="flex w-max">
+          <div className="animate-marquee-track">
+            {[...industries, ...industries].map((name, i) => {
+              const conf = industryStyles[name] || defaultIndustryStyle;
+              return (
+                <span
+                  key={`t1-${name}-${i}`}
+                  className={`group inline-flex items-center gap-2 rounded-full border px-3.5 sm:px-4 py-1.5 sm:py-2 text-xs font-bold transition-all duration-200 hover:scale-105 hover:shadow-sm cursor-default whitespace-nowrap ${conf.bg} ${conf.border} ${conf.text} ${conf.hoverBg} ${conf.hoverText} ${conf.hoverBorder}`}
+                >
+                  <span className={`h-1.5 w-1.5 rounded-full transition-transform duration-200 group-hover:scale-125 ${conf.dot} group-hover:bg-current`} />
+                  <span>{name}</span>
+                </span>
+              );
+            })}
+          </div>
+          <div className="animate-marquee-track" aria-hidden="true">
+            {[...industries, ...industries].map((name, i) => {
+              const conf = industryStyles[name] || defaultIndustryStyle;
+              return (
+                <span
+                  key={`t2-${name}-${i}`}
+                  className={`group inline-flex items-center gap-2 rounded-full border px-3.5 sm:px-4 py-1.5 sm:py-2 text-xs font-bold transition-all duration-200 hover:scale-105 hover:shadow-sm cursor-default whitespace-nowrap ${conf.bg} ${conf.border} ${conf.text} ${conf.hoverBg} ${conf.hoverText} ${conf.hoverBorder}`}
+                >
+                  <span className={`h-1.5 w-1.5 rounded-full transition-transform duration-200 group-hover:scale-125 ${conf.dot} group-hover:bg-current`} />
+                  <span>{name}</span>
+                </span>
+              );
+            })}
+          </div>
         </div>
       </section>
 
@@ -355,14 +505,16 @@ export default function Home() {
         </div>
       </section>
 
+      <CertificationsSection background="cloud" />
+
       <section className="hero-noise relative overflow-hidden bg-ink py-20 text-white sm:py-24 lg:py-28">
         <div className="absolute -left-20 top-20 h-72 w-72 rounded-full bg-blue/20 blur-3xl animate-pulse-slow pointer-events-none" />
-        <div className="absolute right-0 bottom-10 h-80 w-80 rounded-full bg-sky/15 blur-3xl pointer-events-none" />
+        <div className="absolute right-0 bottom-10 h-80 w-80 rounded-full bg-gold/12 blur-3xl pointer-events-none" />
         <div className="container-shell relative">
           <div className="mx-auto max-w-3xl text-center">
             <Reveal>
-              <div className="inline-flex items-center gap-2 rounded-full border border-white/10 bg-white/5 px-3.5 py-1.5 text-[11px] font-bold uppercase tracking-[.18em] text-sky transition-all duration-300 hover:border-white/20 hover:bg-white/10 hover:scale-105 cursor-default">
-                <span className="h-1.5 w-1.5 rounded-full bg-mint animate-pulse" />
+              <div className="inline-flex items-center gap-2 rounded-full border border-gold/30 bg-gold/10 px-3.5 py-1.5 text-[11px] font-bold uppercase tracking-[.18em] text-gold transition-all duration-300 hover:border-gold/50 hover:bg-gold/15 hover:scale-105 cursor-default">
+                <span className="h-1.5 w-1.5 rounded-full bg-gold animate-pulse" />
                 Featured Video
               </div>
               <h2 className="mt-5 text-3xl font-black tracking-[-0.045em] sm:text-4xl lg:text-[46px] lg:leading-[1.08]">

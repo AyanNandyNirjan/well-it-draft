@@ -21,7 +21,7 @@ export default function ContactPage() {
                 <div className="absolute -right-10 -top-20 h-64 w-64 rounded-full bg-blue/20 blur-3xl animate-pulse-slow pointer-events-none" />
                 <div className="relative">
                   <div className="flex items-center justify-between">
-                    <span className="inline-block text-xs font-black uppercase tracking-[.16em] text-sky transition-transform duration-200 group-hover:scale-105">
+                    <span className="inline-block text-xs font-black uppercase tracking-[.16em] text-gold transition-transform duration-200 group-hover:scale-105">
                       Head office
                     </span>
                     <span className="flex items-center gap-1.5 rounded-full bg-emerald-500/15 border border-emerald-500/30 px-3 py-1 text-[11px] font-bold text-emerald-400">
@@ -40,14 +40,14 @@ export default function ContactPage() {
                   <div className="mt-6 border-t border-white/10 pt-5 space-y-3">
                     <a
                       href="tel:+8801310367722"
-                      className="group/link flex items-center gap-2 text-sm font-bold text-white transition-all duration-200 hover:text-sky hover:translate-x-1"
+                      className="group/link flex items-center gap-2 text-sm font-bold text-white transition-all duration-200 hover:text-gold hover:translate-x-1"
                     >
                       <span>+880 1310-367722</span>
                       <span className="text-xs opacity-0 transition-opacity duration-200 group-hover/link:opacity-100">↗</span>
                     </a>
                     <a
                       href="mailto:contact@wellit.info"
-                      className="group/link flex items-center gap-2 text-sm font-bold text-white transition-all duration-200 hover:text-sky hover:translate-x-1"
+                      className="group/link flex items-center gap-2 text-sm font-bold text-white transition-all duration-200 hover:text-gold hover:translate-x-1"
                     >
                       <span>contact@wellit.info</span>
                       <span className="text-xs opacity-0 transition-opacity duration-200 group-hover/link:opacity-100">↗</span>
@@ -56,10 +56,10 @@ export default function ContactPage() {
 
                   <div className="mt-6 rounded-2xl border border-white/10 bg-white/5 p-4 transition-all duration-200 hover:bg-white/10 cursor-default">
                     <div className="flex items-center justify-between">
-                      <p className="text-[11px] font-bold uppercase tracking-[.15em] text-sky">
+                      <p className="text-[11px] font-bold uppercase tracking-[.15em] text-gold">
                         Operational Coverage
                       </p>
-                      <span className="text-[10px] text-mint font-semibold">Continuous Shifts</span>
+                      <span className="text-[10px] text-gold font-semibold">Continuous Shifts</span>
                     </div>
                     <p className="mt-2 text-xs text-white/80 font-medium">
                       Monday – Friday · 06:00 – 23:00 (BST)

@@ -282,7 +282,7 @@ export default function HeroConsole() {
             {/* Operational SLA & Timezone Bar */}
             <div className="flex flex-col sm:flex-row items-start sm:items-center justify-between rounded-2xl border border-white/10 bg-white/[0.03] px-3.5 sm:px-4 py-2 sm:py-2.5 text-[11px] sm:text-xs text-white/70 gap-2">
               <div className="flex items-center gap-2">
-                <HugeiconsIcon icon={Shield01Icon} size={15} className="text-mint shrink-0" />
+                <HugeiconsIcon icon={Shield01Icon} size={15} className="text-gold shrink-0" />
                 <span className="font-semibold text-white/90">{activePod.sla}</span>
               </div>
               <div className="flex items-center gap-1.5 text-white/60 text-[10px] sm:text-[11px]">
@@ -302,7 +302,7 @@ export default function HeroConsole() {
 
           <Link
             href="/contact"
-            className="group/cta inline-flex shrink-0 items-center gap-1.5 rounded-full bg-white px-3.5 sm:px-4 py-1.5 sm:py-2 text-xs font-black text-ink transition-all duration-300 hover:bg-sky hover:shadow-glow active:scale-95"
+            className="group/cta inline-flex shrink-0 items-center gap-1.5 rounded-full bg-white px-3.5 sm:px-4 py-1.5 sm:py-2 text-xs font-black text-ink transition-all duration-300 hover:bg-gold hover:text-ink hover:shadow-gold active:scale-95"
           >
             <span>Deploy Team</span>
             <HugeiconsIcon

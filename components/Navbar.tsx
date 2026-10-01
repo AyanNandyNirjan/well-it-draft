@@ -41,8 +41,8 @@ export default function Navbar() {
           {/* Logo in light mode */}
           <BrandLogo light={false} />
 
-          {/* Central Dock Pill Navigation */}
-          <nav className="hidden lg:flex items-center gap-1 rounded-full p-1 border bg-slate-100/80 border-slate-200/70">
+          {/* Central Dock Pill Navigation - Main Website Color (Deep Brand Navy) */}
+          <nav className="hidden lg:flex items-center gap-1 rounded-full p-1 border bg-[#0B1528] border-[#2C4975]/40 shadow-[0_4px_18px_rgba(11,21,40,0.25),inset_0_1px_1px_rgba(255,255,255,0.12)]">
             {nav.map(([label, href]) => {
               const active = pathname === href;
               return (
@@ -51,15 +51,15 @@ export default function Navbar() {
                   href={href}
                   className={`relative rounded-full px-4 py-1.5 text-xs font-bold transition-all duration-200 active:scale-95 ${
                     active
-                      ? "text-blue"
-                      : "text-slate-700 hover:text-ink"
+                      ? "text-white"
+                      : "text-slate-300 hover:text-white hover:bg-white/[0.06]"
                   }`}
                 >
                   {/* Floating active pill highlight */}
                   {active && (
                     <motion.span
                       layoutId="nav-pill"
-                      className="absolute inset-0 rounded-full bg-white shadow-2xs"
+                      className="absolute inset-0 rounded-full bg-gradient-to-r from-[#2C4975] to-[#3a6096] border border-white/20 shadow-[0_2px_10px_rgba(44,73,117,0.45),inset_0_1px_0_rgba(255,255,255,0.2)]"
                       transition={{ type: "spring", stiffness: 400, damping: 32 }}
                     />
                   )}
@@ -129,8 +129,8 @@ export default function Navbar() {
                     href={href}
                     className={`rounded-2xl px-4 py-3 text-sm font-bold transition-all duration-200 ${
                       pathname === href
-                        ? "bg-blue/10 text-blue"
-                        : "text-slate-700 hover:bg-slate-100 hover:text-blue"
+                        ? "bg-[#0B1528] text-white shadow-sm"
+                        : "text-slate-700 hover:bg-slate-100 hover:text-ink"
                     }`}
                   >
                     {label}

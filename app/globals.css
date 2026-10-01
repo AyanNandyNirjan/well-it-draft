@@ -49,9 +49,22 @@ button, input, textarea, select { font: inherit; }
   mask-image: linear-gradient(to bottom, black, transparent 84%);
 }
 
-.marquee-track { animation: marquee 30s linear infinite; }
-.marquee-track:hover { animation-play-state: paused; }
-@keyframes marquee { from { transform: translateX(0); } to { transform: translateX(-50%); } }
+.animate-marquee-track {
+  display: flex;
+  flex-shrink: 0;
+  align-items: center;
+  gap: 0.75rem;
+  padding-right: 0.75rem;
+  animation: marquee-infinite 45s linear infinite;
+  will-change: transform;
+}
+.marquee-container:hover .animate-marquee-track {
+  animation-play-state: paused;
+}
+@keyframes marquee-infinite {
+  0% { transform: translateX(0%); }
+  100% { transform: translateX(-100%); }
+}
 
 .floating { animation: floating 5s ease-in-out infinite; }
 .floating:hover { animation-play-state: paused; }

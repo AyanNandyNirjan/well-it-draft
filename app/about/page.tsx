@@ -2,6 +2,7 @@ import PageHero from "@/components/PageHero";
 import Image from "next/image";
 import SectionHeading from "@/components/SectionHeading";
 import Reveal from "@/components/Reveal";
+import CertificationsSection from "@/components/CertificationsSection";
 import CTA from "@/components/CTA";
 
 export const metadata = { title: "About" };
@@ -27,10 +28,10 @@ export default function AboutPage() {
           <Reveal delay={0.1}>
             <div className="grid gap-4 sm:grid-cols-2">
               <div className="group rounded-[26px] bg-ink p-7 text-white shadow-soft transition-all duration-300 hover:-translate-y-2 hover:shadow-2xl cursor-default">
-                <span className="inline-block text-xs font-bold uppercase tracking-[.16em] text-sky transition-transform duration-200 group-hover:scale-105">
+                <span className="inline-block text-xs font-bold uppercase tracking-[.16em] text-gold transition-transform duration-200 group-hover:scale-105">
                   Mission
                 </span>
-                <p className="mt-4 text-xl font-extrabold leading-8 transition-colors duration-200 group-hover:text-sky">
+                <p className="mt-4 text-xl font-extrabold leading-8 transition-colors duration-200 group-hover:text-gold">
                   Deliver qualified remote talent, operational support and measurable business value.
                 </p>
               </div>
@@ -63,8 +64,8 @@ export default function AboutPage() {
                 
                 <div className="absolute inset-x-0 bottom-0 p-6 sm:p-8 lg:p-10">
                   <div className="max-w-2xl">
-                    <span className="inline-flex items-center gap-2 rounded-full border border-sky/30 bg-sky/15 px-3.5 py-1.5 text-xs font-bold uppercase tracking-[.18em] text-sky backdrop-blur-md">
-                      <span className="h-1.5 w-1.5 rounded-full bg-mint animate-pulse" />
+                    <span className="inline-flex items-center gap-2 rounded-full border border-gold/30 bg-gold/15 px-3.5 py-1.5 text-xs font-bold uppercase tracking-[.18em] text-gold backdrop-blur-md">
+                      <span className="h-1.5 w-1.5 rounded-full bg-gold animate-pulse" />
                       Dhaka Delivery Hub
                     </span>
                     <h3 className="mt-3 text-2xl font-black text-white sm:text-3xl lg:text-4xl tracking-tight">
@@ -174,6 +175,8 @@ export default function AboutPage() {
           </Reveal>
         </div>
       </section>
+
+      <CertificationsSection background="cloud" />
 
       <CTA />
     </main>

@@ -25,7 +25,7 @@ export default function VideoSpotlight({
   return (
     <div className="relative mx-auto w-full max-w-4xl">
       {/* Decorative ambient lighting glow matching brand colors */}
-      <div className="absolute -inset-4 rounded-[36px] bg-gradient-to-r from-blue/20 via-sky/15 to-mint/20 blur-2xl -z-10" />
+      <div className="absolute -inset-4 rounded-[36px] bg-gradient-to-r from-blue/25 via-sky/15 to-gold/20 blur-2xl -z-10" />
 
       {/* Main player container */}
       <div className="relative overflow-hidden rounded-[28px] border border-slate-200/80 bg-ink shadow-soft">
@@ -54,7 +54,7 @@ export default function VideoSpotlight({
                   <span>{channelName}</span>
                 </div>
                 <div className="hidden items-center gap-2 rounded-full border border-white/10 bg-white/10 px-3 py-1 text-[11px] font-bold tracking-wider text-white/90 backdrop-blur-md sm:inline-flex">
-                  <span className="h-1.5 w-1.5 rounded-full bg-mint animate-pulse" />
+                  <span className="h-1.5 w-1.5 rounded-full bg-gold animate-pulse" />
                   <span>OFFICIAL VIDEO</span>
                 </div>
               </div>
@@ -69,9 +69,9 @@ export default function VideoSpotlight({
                 {/* Pulsing ring */}
                 <span className="absolute inset-0 rounded-full bg-blue/30 animate-ping opacity-60 duration-1000 group-hover/btn:opacity-90" />
                 {/* Outer glow circle */}
-                <span className="absolute -inset-2 rounded-full bg-gradient-to-r from-blue/40 to-sky/40 blur-md transition-all duration-300 group-hover/btn:scale-110" />
+                <span className="absolute -inset-2 rounded-full bg-gradient-to-r from-blue/40 to-gold/40 blur-md transition-all duration-300 group-hover/btn:scale-110" />
                 {/* Button base */}
-                <span className="relative grid h-16 w-16 place-items-center rounded-full bg-gradient-to-br from-blue to-sky text-white shadow-glow transition-transform duration-300 group-hover/btn:scale-110 sm:h-20 sm:w-20">
+                <span className="relative grid h-16 w-16 place-items-center rounded-full bg-gradient-to-br from-blue via-[#386094] to-gold text-white shadow-glow transition-transform duration-300 group-hover/btn:scale-110 sm:h-20 sm:w-20">
                   <span className="translate-x-0.5">
                     <HugeiconsIcon icon={PlayIcon} size={30} color="currentColor" strokeWidth={2.4} />
                   </span>
@@ -82,7 +82,7 @@ export default function VideoSpotlight({
               <div className="absolute inset-x-0 bottom-0 p-4 sm:p-6">
                 <div className="flex flex-col gap-3 sm:flex-row sm:items-end sm:justify-between">
                   <div className="max-w-xl">
-                    <div className="inline-flex items-center gap-1.5 text-xs font-bold uppercase tracking-[.16em] text-sky">
+                    <div className="inline-flex items-center gap-1.5 text-xs font-bold uppercase tracking-[.16em] text-gold">
                       <HugeiconsIcon icon={Video01Icon} size={14} color="currentColor" />
                       <span>Executive Perspective</span>
                     </div>
@@ -95,7 +95,7 @@ export default function VideoSpotlight({
                     <button
                       type="button"
                       onClick={() => setIsPlaying(true)}
-                      className="inline-flex items-center gap-2 rounded-full bg-white px-4 py-2 text-xs font-bold text-ink transition hover:bg-sky"
+                      className="inline-flex items-center gap-2 rounded-full bg-white px-4 py-2 text-xs font-bold text-ink transition hover:bg-gold hover:text-ink"
                     >
                       <HugeiconsIcon icon={PlayIcon} size={14} color="currentColor" />
                       <span>Play Now</span>
